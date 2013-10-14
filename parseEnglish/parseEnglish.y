@@ -1,32 +1,38 @@
 %{
 /*
-Inspired from Lex and Yacc -Oreilly
+*Inspired from Lex and Yacc -Oreilly
 */
+
 #include <stdio.h>
+#include <stdlib.h>	
 
 %}
 
-%token NOUN PRONOUN VERB 
+%token VE NO PR 
 
 %% 
-sentence: subject VERB object {printf ("Sentence is valid. \n");} 	
 
-subject: NOUN | PRONOUN ;
-object: NOUN ;
+sentence : subject VE object {printf ("\nSentence is valid\n");} 
+	;
+
+subject	: NO 
+	  | 
+	  PR 
+	  ;
+
+object	: NO 
+	  ;
 
 %%
 
-extern FILE *yyin ;
-
-main()
+int main()
 {
-while (!feof(yyin)) {
 	yyparse();
-}
+	return 0;
 }
 
-yyerror(s)
-char *s;
+int yyerror()
 {
-	fprintf (stderr, "%s\n",s);
+printf("Error\n");
+return 0;
 }

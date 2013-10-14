@@ -101,9 +101,11 @@ Maintained by Magnus Ekdahl <magnus@debian.org>
 #line 1 "parseEnglish.y"
 
 /*
-Inspired from Lex and Yacc -Oreilly
+*Inspired from Lex and Yacc -Oreilly
 */
+
 #include <stdio.h>
+#include <stdlib.h>	
 
 
 #line 88 "/usr/share/bison++/bison.cc"
@@ -306,9 +308,9 @@ typedef
 /* TOKEN C */
 
  #line 263 "/usr/share/bison++/bison.cc"
-#define	NOUN	258
-#define	PRONOUN	259
-#define	VERB	260
+#define	VE	258
+#define	NO	259
+#define	PR	260
 
 
 #line 263 "/usr/share/bison++/bison.cc"
@@ -358,9 +360,9 @@ public:
 /* static const int token ... */
 
  #line 307 "/usr/share/bison++/bison.cc"
-static const int NOUN;
-static const int PRONOUN;
-static const int VERB;
+static const int VE;
+static const int NO;
+static const int PR;
 
 
 #line 307 "/usr/share/bison++/bison.cc"
@@ -369,9 +371,9 @@ static const int VERB;
 enum YY_parse_ENUM_TOKEN { YY_parse_NULL_TOKEN=0
 
  #line 310 "/usr/share/bison++/bison.cc"
-	,NOUN=258
-	,PRONOUN=259
-	,VERB=260
+	,VE=258
+	,NO=259
+	,PR=260
 
 
 #line 310 "/usr/share/bison++/bison.cc"
@@ -408,9 +410,9 @@ public:
 #if YY_parse_USE_CONST_TOKEN != 0
 
  #line 341 "/usr/share/bison++/bison.cc"
-const int YY_parse_CLASS::NOUN=258;
-const int YY_parse_CLASS::PRONOUN=259;
-const int YY_parse_CLASS::VERB=260;
+const int YY_parse_CLASS::VE=258;
+const int YY_parse_CLASS::NO=259;
+const int YY_parse_CLASS::PR=260;
 
 
 #line 341 "/usr/share/bison++/bison.cc"
@@ -470,18 +472,18 @@ static const short yyprhs[] = {     0,
 };
 
 static const short yyrhs[] = {     7,
-     5,     8,     0,     3,     0,     4,     0,     3,     0
+     3,     8,     0,     4,     0,     5,     0,     4,     0
 };
 
 #endif
 
 #if (YY_parse_DEBUG != 0) || defined(YY_parse_ERROR_VERBOSE) 
 static const short yyrline[] = { 0,
-    12,    14,    14,    15
+    15,    18,    19,    23
 };
 
-static const char * const yytname[] = {   "$","error","$illegal.","NOUN","PRONOUN",
-"VERB","sentence","subject","object",""
+static const char * const yytname[] = {   "$","error","$illegal.","VE","NO",
+"PR","sentence","subject","object",""
 };
 #endif
 
@@ -501,8 +503,8 @@ static const short yydefgoto[] = {     7,
      3,     6
 };
 
-static const short yypact[] = {    -3,
--32768,-32768,    -2,    -1,-32768,-32768,     4,     5,-32768
+static const short yypact[] = {    -4,
+-32768,-32768,    -1,     0,-32768,-32768,     3,     5,-32768
 };
 
 static const short yypgoto[] = {-32768,
@@ -514,11 +516,11 @@ static const short yypgoto[] = {-32768,
 
 
 static const short yytable[] = {     1,
-     2,     5,     4,     8,     9
+     2,     4,     8,     5,     9
 };
 
-static const short yycheck[] = {     3,
-     4,     3,     5,     0,     0
+static const short yycheck[] = {     4,
+     5,     3,     0,     4,     0
 };
 
 #line 352 "/usr/share/bison++/bison.cc"
@@ -1015,8 +1017,16 @@ YYLABEL(yyreduce)
   switch (yyn) {
 
 case 1:
-#line 12 "parseEnglish.y"
-{printf ("Sentence is valid. \n");;
+#line 15 "parseEnglish.y"
+{printf ("\nSentence is valid\n");;
+    break;}
+case 2:
+#line 18 "parseEnglish.y"
+{printf("NOUN");;
+    break;}
+case 3:
+#line 20 "parseEnglish.y"
+{printf("PRONOUN");;
     break;}
 }
 
@@ -1222,20 +1232,17 @@ YYLABEL(yyerrhandle)
 /* END */
 
  #line 1038 "/usr/share/bison++/bison.cc"
-#line 17 "parseEnglish.y"
+#line 26 "parseEnglish.y"
 
 
-extern FILE *yyin ;
-
-main()
+int main()
 {
-while (!feof(yyin)) {
 	yyparse();
-}
+	return 0;
 }
 
-yyerror(s)
-char *s;
+int yyerror()
 {
-	fprintf (stderr, "%s\n",s);
+printf("Error\n");
+return 0;
 }

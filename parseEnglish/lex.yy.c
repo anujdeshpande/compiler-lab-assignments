@@ -285,13 +285,12 @@ static void yy_fatal_error YY_PROTO(( yyconst char msg[] ));
 	*yy_cp = '\0'; \
 	yy_c_buf_p = yy_cp;
 
-#define YY_NUM_RULES 8
-#define YY_END_OF_BUFFER 9
-static yyconst short int yy_accept[23] =
+#define YY_NUM_RULES 6
+#define YY_END_OF_BUFFER 7
+static yyconst short int yy_accept[21] =
     {   0,
-        0,    0,    9,    7,    1,    7,    6,    6,    6,    6,
-        2,    6,    6,    6,    6,    6,    6,    6,    4,    5,
-        3,    0
+        0,    0,    7,    6,    1,    5,    5,    5,    5,    5,
+        5,    5,    5,    5,    5,    5,    3,    4,    2,    0
     } ;
 
 static yyconst int yy_ec[256] =
@@ -300,16 +299,16 @@ static yyconst int yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    3,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    4,    4,    4,    4,    4,    4,
-        4,    4,    4,    4,    4,    4,    4,    4,    4,    4,
-        4,    4,    4,    4,    4,    4,    4,    4,    4,    4,
-        1,    1,    1,    1,    1,    1,    4,    5,    4,    4,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    3,    3,    3,    3,    3,    3,
+        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
+        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
+        1,    1,    1,    1,    1,    1,    3,    4,    3,    3,
 
-        6,    4,    4,    4,    4,    4,    4,    4,    4,    7,
-        8,    9,    4,   10,    4,    4,   11,   12,    4,    4,
-        4,    4,    1,    1,    1,    1,    1,    1,    1,    1,
+        5,    3,    3,    3,    3,    3,    3,    3,    3,    6,
+        7,    8,    3,    9,    3,    3,   10,   11,    3,    3,
+        3,    3,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -326,40 +325,40 @@ static yyconst int yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static yyconst int yy_meta[13] =
+static yyconst int yy_meta[12] =
     {   0,
-        1,    1,    1,    2,    2,    2,    2,    2,    2,    2,
-        2,    2
+        1,    1,    2,    2,    2,    2,    2,    2,    2,    2,
+        2
     } ;
 
-static yyconst short int yy_base[25] =
+static yyconst short int yy_base[23] =
     {   0,
-        0,    3,   23,   24,   24,   20,    0,   13,   10,   13,
-       24,    0,    7,    6,    3,    4,    2,    3,    0,    0,
-        0,   24,   15,    5
+        0,    2,   20,   21,   21,    0,   12,    9,   12,    0,
+        6,    5,    2,    3,    1,    2,    0,    0,    0,   21,
+       13,    3
     } ;
 
-static yyconst short int yy_def[25] =
+static yyconst short int yy_def[23] =
     {   0,
-       23,   23,   22,   22,   22,   22,   24,   24,   24,   24,
-       22,   24,   24,   24,   24,   24,   24,   24,   24,   24,
-       24,    0,   22,   22
+       21,   21,   20,   20,   20,   22,   22,   22,   22,   22,
+       22,   22,   22,   22,   22,   22,   22,   22,   22,    0,
+       20,   20
     } ;
 
-static yyconst short int yy_nxt[37] =
+static yyconst short int yy_nxt[33] =
     {   0,
-        4,    5,    6,    4,    5,    6,   12,   21,   20,    8,
-       19,    9,   18,   17,   10,    7,    7,   16,   15,   14,
-       13,   11,   22,    3,   22,   22,   22,   22,   22,   22,
-       22,   22,   22,   22,   22,   22
+        4,    5,    4,    5,   10,   19,   18,    7,   17,    8,
+       16,   15,    9,    6,    6,   14,   13,   12,   11,   20,
+        3,   20,   20,   20,   20,   20,   20,   20,   20,   20,
+       20,   20
     } ;
 
-static yyconst short int yy_chk[37] =
+static yyconst short int yy_chk[33] =
     {   0,
-        1,    1,    1,    2,    2,    2,   24,   18,   17,    2,
-       16,    2,   15,   14,    2,   23,   23,   13,   10,    9,
-        8,    6,    3,   22,   22,   22,   22,   22,   22,   22,
-       22,   22,   22,   22,   22,   22
+        1,    1,    2,    2,   22,   16,   15,    2,   14,    2,
+       13,   12,    2,   21,   21,   11,    9,    8,    7,    3,
+       20,   20,   20,   20,   20,   20,   20,   20,   20,   20,
+       20,   20
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -377,15 +376,22 @@ char *yytext;
 #define INITIAL 0
 #line 2 "parseEnglish.l"
 /*
+
 5. Write lex and yacc program for parsing English statements.
 Credits to Lex and Yacc - Oreilly
+
 */
+
 #include "y.tab.h"
 #include <string.h>
-#define LOOKUP 0
+#include <stdlib.h>
+
 int state;
 int add_word(int type, char *word);
 int lookup_word(char *word);
+
+enum {LOOKUP=0,V,N,P};
+
 struct word{
 	char *word_name;
 	int word_type;
@@ -393,7 +399,8 @@ struct word{
 };
 struct word *wordlist;
 
-#line 397 "lex.yy.c"
+
+#line 404 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -558,9 +565,10 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 21 "parseEnglish.l"
+#line 29 "parseEnglish.l"
 
-#line 564 "lex.yy.c"
+
+#line 572 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -612,13 +620,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 23 )
+				if ( yy_current_state >= 21 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 24 );
+		while ( yy_base[yy_current_state] != 21 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -646,58 +654,50 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 22 "parseEnglish.l"
+#line 31 "parseEnglish.l"
 {state = LOOKUP;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 23 "parseEnglish.l"
-{state = LOOKUP; return 0;}
+#line 32 "parseEnglish.l"
+{state = V;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 24 "parseEnglish.l"
-{state = VERB;}
+#line 33 "parseEnglish.l"
+{state = N;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 25 "parseEnglish.l"
-{state = NOUN;}
+#line 34 "parseEnglish.l"
+{state = P;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 26 "parseEnglish.l"
-{state = PRONOUN;}
+#line 36 "parseEnglish.l"
+{
+		if(state!=LOOKUP)
+			add_word(state,yytext);
+		else
+		{
+		switch (lookup_word(yytext))
+			{
+			case V:
+				printf("2");return VE;break;
+			case N:
+				printf("3");return NO;break;
+			case P:
+				printf("4");return PR;break;
+			default:
+				printf("%s: doesn't exist in vocab\n",yytext);break;
+			
+			}
+		}
+	}	
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 28 "parseEnglish.l"
-{
-	if(state!=LOOKUP)
-		add_word(state,yytext);
-	else{
-	switch (lookup_word(yytext)){
-		case VERB:
-			return(VERB);
-		case NOUN:
-			return(NOUN);
-		case PRONOUN:
-			return(PRONOUN);
-		default:
-			printf("%s: doesn't exist in vocab\n",yytext);
-	
-			}
-		}
-	 ; }
-	YY_BREAK
-case 7:
-YY_RULE_SETUP
-#line 45 "parseEnglish.l"
-;
-	YY_BREAK
-case 8:
-YY_RULE_SETUP
-#line 47 "parseEnglish.l"
+#line 56 "parseEnglish.l"
 ECHO;
 	YY_BREAK
 #line 704 "lex.yy.c"
@@ -993,7 +993,7 @@ static yy_state_type yy_get_previous_state()
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 23 )
+			if ( yy_current_state >= 21 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -1028,11 +1028,11 @@ yy_state_type yy_current_state;
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 23 )
+		if ( yy_current_state >= 21 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
-	yy_is_jam = (yy_current_state == 22);
+	yy_is_jam = (yy_current_state == 20);
 
 	return yy_is_jam ? 0 : yy_current_state;
 	}
@@ -1592,16 +1592,14 @@ int main()
 	return 0;
 	}
 #endif
-#line 47 "parseEnglish.l"
+#line 56 "parseEnglish.l"
 
-main(int argc, char *argv[])
-{
-	yyin=fopen(argv[1],"r");
-	yylex();
-}
+
 extern void *malloc();
+
 int add_word(int type, char *word)
 {
+
 	struct word *wp;
 	if(lookup_word(word) != LOOKUP) {
 	printf(" Word %s is already defined \n",word);

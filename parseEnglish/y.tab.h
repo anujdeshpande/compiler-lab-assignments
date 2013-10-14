@@ -186,9 +186,9 @@ typedef
 
 
  #line 169 "/usr/share/bison++/bison.h"
-#define	NOUN	258
-#define	PRONOUN	259
-#define	VERB	260
+#define	VE	258
+#define	NO	259
+#define	PR	260
 
 
 #line 169 "/usr/share/bison++/bison.h"
@@ -237,9 +237,9 @@ public:
   /* static const int token ... */
   
  #line 212 "/usr/share/bison++/bison.h"
-static const int NOUN;
-static const int PRONOUN;
-static const int VERB;
+static const int VE;
+static const int NO;
+static const int PR;
 
 
 #line 212 "/usr/share/bison++/bison.h"
@@ -248,9 +248,9 @@ static const int VERB;
   enum YY_parse_ENUM_TOKEN { YY_parse_NULL_TOKEN=0
   
  #line 215 "/usr/share/bison++/bison.h"
-	,NOUN=258
-	,PRONOUN=259
-	,VERB=260
+	,VE=258
+	,NO=259
+	,PR=260
 
 
 #line 215 "/usr/share/bison++/bison.h"

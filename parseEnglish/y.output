@@ -1,0 +1,100 @@
+
+Grammar
+rule 1    sentence -> subject VE object
+rule 2    subject -> NO
+rule 3    subject -> PR
+rule 4    object -> NO
+
+Terminals, with rules where they appear
+
+$ (-1)
+error (256)
+VE (258) 1
+NO (259) 2 4
+PR (260) 3
+
+Nonterminals, with rules where they appear
+
+sentence (6)
+    on left: 1
+subject (7)
+    on left: 2 3, on right: 1
+object (8)
+    on left: 4, on right: 1
+
+
+state 0
+
+    NO  	shift, and go to state 1
+    PR  	shift, and go to state 2
+
+    sentence	go to state 7
+    subject	go to state 3
+
+
+
+state 1
+
+    subject  ->  NO .   (rule 2)
+
+    $default	reduce using rule 2 (subject)
+
+
+
+state 2
+
+    subject  ->  PR .   (rule 3)
+
+    $default	reduce using rule 3 (subject)
+
+
+
+state 3
+
+    sentence  ->  subject . VE object   (rule 1)
+
+    VE  	shift, and go to state 4
+
+
+
+state 4
+
+    sentence  ->  subject VE . object   (rule 1)
+
+    NO  	shift, and go to state 5
+
+    object	go to state 6
+
+
+
+state 5
+
+    object  ->  NO .   (rule 4)
+
+    $default	reduce using rule 4 (object)
+
+
+
+state 6
+
+    sentence  ->  subject VE object .   (rule 1)
+
+    $default	reduce using rule 1 (sentence)
+
+
+
+state 7
+
+    $   	go to state 8
+
+
+
+state 8
+
+    $   	go to state 9
+
+
+
+state 9
+
+    $default	accept
