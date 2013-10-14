@@ -365,6 +365,9 @@ char *yytext;
 #line 1 "read_multiple.l"
 #define INITIAL 0
 #line 2 "read_multiple.l"
+/*
+  Write a lex program to find character, word and line count from multiple files. [Hint: Use yywrap() to handle EOF condition of first file and connect to second file.] 
+*/
 #include <stdio.h>
 #include <string.h>
 		unsigned wordcount=0, linecount=0, charcount=0;
@@ -372,7 +375,7 @@ char *yytext;
 		int file_num;
 		int file_num_max;
 		char **files;
-#line 376 "lex.yy.c"
+#line 379 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -534,10 +537,10 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 11 "read_multiple.l"
+#line 14 "read_multiple.l"
 
 
-#line 541 "lex.yy.c"
+#line 544 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -622,25 +625,25 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 13 "read_multiple.l"
+#line 16 "read_multiple.l"
 {wordcount++;charcount=charcount+yyleng;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 14 "read_multiple.l"
+#line 17 "read_multiple.l"
 {linecount++;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 15 "read_multiple.l"
+#line 18 "read_multiple.l"
 {;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 17 "read_multiple.l"
+#line 20 "read_multiple.l"
 ECHO;
 	YY_BREAK
-#line 644 "lex.yy.c"
+#line 647 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1530,7 +1533,7 @@ int main()
 	return 0;
 	}
 #endif
-#line 17 "read_multiple.l"
+#line 20 "read_multiple.l"
 
 
 
@@ -1552,13 +1555,14 @@ int main(int argc, char *argv[])
 		return 0;
 }
 
-int yywrap() {
+int yywrap() 
+{
 		fclose(yyin);
 		printf("\n linecount=%d wordcount=%d charcount=%d \n",linecount, wordcount, charcount);
 		
 		if ( ++file_num < file_num_max ) {
 				wordcount=0; linecount=0; charcount=0;
-
+				
 				if ( (yyin = fopen(files[file_num],"r")) == 0 ) {
 						perror(files[file_num]);
 						exit(1);

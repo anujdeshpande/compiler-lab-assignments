@@ -38,13 +38,14 @@ int main(int argc, char *argv[])
 		return 0;
 }
 
-int yywrap() {
+int yywrap() 
+{
 		fclose(yyin);
 		printf("\n linecount=%d wordcount=%d charcount=%d \n",linecount, wordcount, charcount);
 		
 		if ( ++file_num < file_num_max ) {
 				wordcount=0; linecount=0; charcount=0;
-
+				
 				if ( (yyin = fopen(files[file_num],"r")) == 0 ) {
 						perror(files[file_num]);
 						exit(1);
