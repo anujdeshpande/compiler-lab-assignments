@@ -1,4 +1,7 @@
 %{
+/*
+  Write a lex program to find character, word and line count from multiple files. [Hint: Use yywrap() to handle EOF condition of first file and connect to second file.] 
+*/
 #include <stdio.h>
 #include <string.h>
 		unsigned wordcount=0, linecount=0, charcount=0;
