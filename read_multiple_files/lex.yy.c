@@ -367,14 +367,12 @@ char *yytext;
 #line 2 "read_multiple.l"
 #include <stdio.h>
 #include <string.h>
-FILE *in;
-unsigned wordcount=0, linecount=0, charcount=0, filecount=0;
-char ** listfiles;
+		unsigned wordcount=0, linecount=0, charcount=0;
 
-int file_num;
-int file_num_max;
-char **files;
-#line 378 "lex.yy.c"
+		int file_num;
+		int file_num_max;
+		char **files;
+#line 376 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -536,10 +534,10 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 13 "read_multiple.l"
+#line 11 "read_multiple.l"
 
 
-#line 543 "lex.yy.c"
+#line 541 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -624,25 +622,25 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 15 "read_multiple.l"
+#line 13 "read_multiple.l"
 {wordcount++;charcount=charcount+yyleng;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 16 "read_multiple.l"
+#line 14 "read_multiple.l"
 {linecount++;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 17 "read_multiple.l"
+#line 15 "read_multiple.l"
 {;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 19 "read_multiple.l"
+#line 17 "read_multiple.l"
 ECHO;
 	YY_BREAK
-#line 646 "lex.yy.c"
+#line 644 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1532,65 +1530,44 @@ int main()
 	return 0;
 	}
 #endif
-#line 19 "read_multiple.l"
+#line 17 "read_multiple.l"
 
 
-/* main(int argv, char** argc) */
-/* { */
 
-/* char file[40]; */
-/* int i ; */
-/* listfiles=argc; */
-/* filecount=argv-1; */
-/* in = fopen(argc[1],"r"); */
-/* yyin=in; */
-/* yylex(); */
-/* fclose(in); */
-/* printf("\n linecount=%d wordcount=%d charcount=%d \n",linecount, wordcount, charcount); */
+int main(int argc, char *argv[]) 
+{
+		file_num=1;
+		file_num_max = argc;
+		files = argv;
+		if ( argc > 1 ) {
+				if ( (yyin = fopen(argv[file_num],"r")) == 0 ) {
+						perror(argv[file_num]);
+						exit(1);
+				}
 
-/* } */
-
-/* int yywrap() */
-/* { */
-/* 		int i; */
-/* 		for (i=2;i<=filecount;i++) */
-/* 		{ */
-/* 				fclose(in); */
-/* 				in=fopen(listfiles[i],"r"); */
-/* 				yyin=in; */
-
-/* 		} */
-		
-/* 		return 1; */
-/* } */
-
-
-int main(int argc, char *argv[]) {
-	file_num=1;
-	file_num_max = argc;
-	files = argv;
-	if ( argc > 1 ) {
-		if ( (yyin = fopen(argv[file_num],"r")) == 0 ) {
-			perror(argv[file_num]);
-			exit(1);
 		}
-	}
-	while( yylex() )
-		;
-	printf("\n linecount=%d wordcount=%d charcount=%d \n",linecount, wordcount, charcount);
-
-	return 0;
+		while( yylex() )
+				;
+		
+		return 0;
 }
 
 int yywrap() {
-	fclose(yyin);
-	if ( ++file_num < file_num_max ) {
-		if ( (yyin = fopen(files[file_num],"r")) == 0 ) {
-			perror(files[file_num]);
-			exit(1);
+		fclose(yyin);
+		printf("\n linecount=%d wordcount=%d charcount=%d \n",linecount, wordcount, charcount);
+		
+		if ( ++file_num < file_num_max ) {
+				wordcount=0; linecount=0; charcount=0;
+
+				if ( (yyin = fopen(files[file_num],"r")) == 0 ) {
+						perror(files[file_num]);
+						exit(1);
+				}
+				
+				return 0;
+		} 
+		else 
+		{
+				return 1;
 		}
-		return 0;
-	} else {
-		return 1;
-	}
 }
